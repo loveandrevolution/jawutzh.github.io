@@ -5,7 +5,7 @@ layout: default
     {% for post in paginator.posts %}
     <div class="post-card">
         <div class="post-meta">
-	<a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+	<a href="{{ site.url }}{{ post.url }}" class="post-title">{{ post.title }}</a>
 		<span class="post-date"><span><i class="fa fa-clock-o"></i> {{ post.date | date: "%Y.%m.%d" }}</span>
 			{% for category in post.categories %}
                 <a href="{{ site.url }}/category/{{ category }}"><i class="fa fa-archive"></i> {{ category }}</a>
