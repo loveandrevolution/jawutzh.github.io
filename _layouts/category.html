@@ -1,0 +1,122 @@
+---
+layout: default
+---
+
+<script>
+  document.title = '{{ page.fl }}分类下的文章 | {{ site.title }}'
+  var postName = new Array()
+  var postDate = new Array()
+  var postURL = new Array()
+  var postContent = new Array()
+</script>
+{% assign times = 0 %}
+{% for post in site.categories[page.fl] %}
+<script>
+  postName [{{ times }}] = "{{ post.title }}"
+  postDate [{{ times }}] = "{{ post.date \| date: \"%Y.%m.%d\" }}"
+  postURL [{{ times }}] = "{{ post.url }}"
+  {% if post.encrypted %}
+  postContent [{{ times }}] = "<div class=\"post-encrypted\"><i class=\"fa fa-lock\"></i>此文已加密，請输入密钥以解密。</div>"
+  {% else %}
+  postContent [{{ times }}] = "{{ post.excerpt | strip_html | strip_newlines}}"
+  {% endif %}
+  
+  {% assign times = times | plus : 1 %}
+</script>
+{% endfor %}
+
+<script>
+  !location.hash ? location.hash = 1 : location.hash;
+  var maxNumberPerPage = {{ site.paginate }};
+  var nowPage = parseInt(location.hash.replace('#',""));
+  var nowPostNumber = 0;
+  var maxPage = Math.ceil( postName.length / maxNumberPerPage);
+</script>
+<div id="container">
+  <div id="ifPageNotExist" style="display:none">404：此分页不存在</div>
+  <script>
+      for (i = 1; i <= maxPage; i++) { 
+        var createPage = document.createElement('div');
+        createPage.id = 'PageContainer' + i;
+        createPage.innerHTML = '<h6 class="info-tag">{{ page.fl }} 分类下共 ' + postName.length +' 篇文章</h4>'
+        createPage.style.display = "none"
+        document.getElementById('container').appendChild(createPage);
+        for(j = 0; j < maxNumberPerPage && nowPostNumber < postName.length; j++ ){
+          var createPostNode = document.createElement('div');
+		  createPostNode.href = "{{ site.url }}" + postURL[nowPostNumber];
+          createPostNode.innerHTML = '<div class="post-meta"><a href="' + 
+		  postURL[nowPostNumber] + '" class="post-title">' + 
+		  postName[nowPostNumber] + '</a> <span class="post-date"><i class=\"fa fa-clock-o\"></i> ' + postDate[nowPostNumber] + '</span></div>' +
+		  '<span class="page-content">' + postContent[nowPostNumber] + '</span>' + '<div class="read-more-block"><a class="read-more" href="' + postURL[nowPostNumber] + '">Read more →</a></div>';
+		  
+          createPostNode.style.display = 'block';
+		  createPostNode.className = 'post-card';
+          document.getElementById('PageContainer' + i).appendChild(createPostNode);
+          nowPostNumber++;
+        }
+      }
+    
+      if (!(nowPage >= 1 && nowPage <= maxPage)){
+        ifPageNotExist.style.display = 'block' ;
+      }
+      else document.getElementById('PageContainer' + nowPage).style.display = 'block';
+
+  </script>
+  <div id="paginator">
+	<a id="nextButton" class="next">以后的→</a>
+	<span id="allpages">of</span>
+	<script>
+		allpages.innerHTML = nowPage + ' of ' + maxPage
+	</script>
+	<a id="previousButton" class="previous">←以前的</a>
+  </div>
+  <script>
+	  if(nowPage == 1 || !(nowPage >= 1 && nowPage <= maxPage))
+		 nextButton.style.display = 'none'
+	  nextButton.onmouseup = function() {
+        if(nowPage > 1){
+          nowPage --;
+          refreshURL()
+        }
+      }
+	  if(nowPage == maxPage || !(nowPage >= 1 && nowPage <= maxPage))
+		previousButton.style.display = 'none'
+      previousButton.onmouseup = function () {
+        if(nowPage < maxPage){
+          nowPage ++;
+          refreshURL()
+        }
+      }
+	  function refreshURL(){
+		location.hash = nowPage;
+	  }
+	  window.onhashchange = function(){
+		location.reload();
+	  }
+  </script>
+</div>
+
+<style>
+	.allpages{ 
+		line-height: 47px 
+	}
+	#paginator{
+		overflow: hidden;
+		text-align:center
+	}
+	.post-node{
+		margin: 10px auto;
+		display: grid;
+		background: #f78a9d;
+		color: #ffffff;
+		padding: 10px 20px;
+		text-align: center;
+		border-bottom: 0;
+		border-radius: 5px;
+		box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+	}
+	.post-node:hover{
+		color: #FFF;
+		filter: brightness(110%);
+	}
+</style>

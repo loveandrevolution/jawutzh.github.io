@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<div class="page-card">
+    <div class="page-meta"><span class="page-title">{{ page.title }}</span><span class="page-date"><span><i class="fa fa-clock-o"></i> {{ page.date | date: "%Y.%m.%d" }}</span>
+		{% for category in page.categories %}
+            <a href="{{ site.url }}/category/{{ category }}"><i class="fa fa-archive"></i> {{ category }}</a>
+        {% endfor %}
+		</span>
+    </div>    
+    <div class="page-content" id="pageContent">
+		{% if page.encrypted %}
+			<div class="post-encrypted">
+			<i class="fa fa-lock"></i>
+			此文已加密，請输入密钥以解密。
+			</div>
+			<script src ="{{ site.url }}/js/aes.js"></script>
+			<div>
+				<input type="password" id="psdta" placeholder="请输入文章密钥以解密" autocomplete="off"></input>
+				<button id="handinpw" onclick="decryptPost()">确认</button>
+				<div id="output"></div>
+			</div>
+
+			<script>
+			var encrypt = "{{ page.content | strip_html | strip_newlines }}"
+
+			function decryptPost(){
+				var key = psdta.value
+				if(!key){
+					output.innerHTML = '请输入密钥。'
+				}
+				else{
+					var decrypt = CryptoJS.AES.decrypt(encrypt, CryptoJS.enc.Utf8.parse(key), {
+									mode: CryptoJS.mode.ECB,
+									padding: CryptoJS.pad.Pkcs7
+								});
+					try{
+						pageContent.innerHTML = decrypt.toString(CryptoJS.enc.Utf8);
+					}
+					catch{
+						output.innerHTML = '解密失败，密钥或密文错误。'
+						
+					}
+				}
+			}
+
+			psdta.addEventListener("keyup", function(event) {
+			    if (event.keyCode === 13) {
+				handinpw.click();
+			    }
+			})
+			</script>
+		{% else %}	
+			{{ page.content }}
+		{% endif %}
+		
+    </div>
+	<div class="post-changer">
+	{% if page.previous != nil %}
+	<a href="{{ page.previous.url }}" class="previous">←上一篇</a>
+	{% endif %}
+		
+	{% if page.next != nil %}
+	<a href="{{ page.next.url }}" class="next">下一篇→</a>
+	{% endif %}
+		
+
+	</div>
+	{% include comments.html %}
+
+</div>
