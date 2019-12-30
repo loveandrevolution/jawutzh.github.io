@@ -6,11 +6,11 @@ layout: default
     <div class="post-card">
         <div class="post-meta">
 	<a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
-		<span class="post-date"><span><i class="fa fa-clock-o"></i> {{ post.date | date: "%Y-%m-%d" }}</span>
+		<span class="post-date"><span><i class="fa fa-clock-o"></i> {{ post.date | date: "%Y.%m.%d" }}</span>
 			{% for category in post.categories %}
                 <a href="{{ site.url }}/category/{{ category }}"><i class="fa fa-archive"></i> {{ category }}</a>
             {% endfor %}
-		<span style="width: 800px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{ post.excerpt | strip_html }}</span>
+		<span>{{ post.excerpt | strip_html }}</span>
     </div>
     {% endfor %}
 
