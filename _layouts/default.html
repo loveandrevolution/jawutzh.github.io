@@ -14,17 +14,31 @@
 				height: 200px;
 				background: #67AEEC
 			}
+			#main-area{
+				width: 1000px;
+				float: left;
+			}
+			#side-barSS{
+				width: 200px;
+				float: right;
+				height:500px;
+			}
+			.container{
+				max-width: 1200px
+			}
 		</style>
 	</head>
 	<body>
 		<header>
 			<div id="header-menu">
+				<div class="container"></div>
 			</div>
 			<div id="title-block">
+				<div class="container"></div>
 			</div>
 		</header>
-		<div id="page">
-			<div>
+		<div id="page" class="container">
+			<div id="main-area">
 			{{ content }}
 			</div>
 			<div id="side-barSS">
