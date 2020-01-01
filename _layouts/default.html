@@ -17,7 +17,7 @@
 				background-image: url("{{ site.url }}/pics/head.png");
 			}
 			#main-area{
-				width: 980px;
+				width: 930px;
 				float: left;
 			}
 			#side-barSS{
@@ -38,7 +38,25 @@
 				color: #FFF;
 				text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 			}
-			
+			.post-card {
+				box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+				border-radius: 8px;
+				height: 200px;
+				position: relative;
+			}
+			.post-img{
+				float: left;
+			}
+			.post-img > img {
+				width: 200px
+				height: 200px;
+				border-radius: 8px 0px 0px 8px;
+			}
+			.post-content{
+				float: right;
+				width: calc(100% - 200px - 20px);
+				padding: 10px;
+			}
 			@media screen and (max-width:1200px) {
 				#main-area{ 
 					width: 100%
