@@ -10,6 +10,7 @@ layout: default
 			{% for category in post.categories %}
                 <a href="{{ site.url }}/category/{{ category }}"><i class="fa fa-archive"></i> {{ category }}</a>
             {% endfor %}
+			</div>
 		<span>{{ post.excerpt | strip_html }}</span>
     </div>
  {% endfor %}
