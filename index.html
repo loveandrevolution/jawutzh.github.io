@@ -4,12 +4,12 @@ layout: default
 
 {% for post in paginator.posts %}
     <div class="post-card">
-		<!-- ↓↓判断文章有无头图，若无使用默认 -->
+		{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
 		{% unless post.hpurl %} 
 			{% assign hpurl = site.defaulthpurl %}
 		{% else %}
 			{% assign hpurl =  post.hpurl %}
-		{% endif %}	
+		{% endunless %}	
 		<!-- ↓↓设置头图 -->
 		<div class="post-img"><img src="{{ hpurl }}"/></div>
 		<div class="post-card-content">
