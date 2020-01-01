@@ -5,7 +5,7 @@ layout: default
 {% for post in paginator.posts %}
     <div class="post-card">
 		<!-- ↓↓判断文章有无头图，若无使用默认 -->
-		{% if !post.hpurl %} 
+		{% unless post.hpurl %} 
 			{% assign hpurl = site.defaulthpurl %}
 		{% else %}
 			{% assign hpurl =  post.hpurl %}
