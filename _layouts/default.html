@@ -11,7 +11,7 @@
 				box-shadow:0px 0px 10px rgba(0,0,0,0.1)
 			}
 			#title-block{
-				height: 300px;
+				height: 350px;
 				background: #67AEEC;
 				background-image: url("{{ site.url }}/pics/head.png");
 			}
@@ -23,15 +23,16 @@
 				background: #F2F2F2;
 				width: 200px;
 				float: right;
-				height:500px;
 			}
 			.container{
-				max-width: 1200px;
+				max-width: 1160px;
+				padding: 20px 0
 				margin: auto
 			}
-			.ptitle{
-				position: absolute;
-				top: 125px;
+			.head-cover{
+				padding: 120px 0
+			}
+			.btitle{
 				font-size: 40px;
 				color: #FFF;
 				text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
@@ -41,11 +42,16 @@
 	<body>
 		<header>
 			<div id="header-menu">
-				<div class="container"></div>
+				<div class="container">
+					{{ site.title }}
+				</div>
 			</div>
 			<div id="title-block">
 				<div class="container">
-					<h1 id="title"></h1>
+					<div class="head-cover">
+						<h1 id="title"></h1>
+						<span id="description"></span>
+					</div>
 				</div>
 			</div>
 		</header>

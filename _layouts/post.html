@@ -4,7 +4,8 @@ layout: default
 
 <script>
 	title.innerHTML = '{{ page.title }}'
-	title.className = 'ptitle'
+	title.className = 'btitle'
+	decription.innerHTML = '{{ page.date | date: "%Y.%m.%d" }} 分类：'
 </script>
 
 {{ page.content }}
