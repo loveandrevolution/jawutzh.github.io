@@ -4,7 +4,14 @@ layout: default
 
 {% for post in paginator.posts %}
     <div class="post-card">
-		<div class="post-img"><img src="{{ post.hpurl }}"/></div>
+		<!-- ↓↓判断文章有无头图，若无使用默认 -->
+		{% if !post.hpurl %} 
+			{% assign hpurl = site.defaulthpurl %}
+		{% else %}
+			{% assign hpurl =  post.hpurl %}
+		{% endif %}	
+		<!-- ↓↓设置头图 -->
+		<div class="post-img"><img src="{{ hpurl }}"/></div>
 		<div class="post-card-content">
 		{{ post.title }} -> {{ post.date | date: "%Y.%m.%d" }} -> {{ post.categories }}
 		<span>{{ post.excerpt | strip_html }}</span>
