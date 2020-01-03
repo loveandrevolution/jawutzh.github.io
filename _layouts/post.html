@@ -6,7 +6,7 @@ layout: default
 	//设置公共header区域内容
 	title.innerHTML = '{{ page.title }}'
 	title.className = 'btitle'
-	description.innerHTML = '{{ page.date | date: "%Y.%m.%d" }} 分类：'
+	description.innerHTML = '{{ page.date | date: "%Y.%m.%d" }} 分类：{{ page.categories }}'
 </script>
 
 {{ page.content }}

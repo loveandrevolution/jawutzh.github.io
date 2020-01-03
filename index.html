@@ -2,6 +2,15 @@
 layout: default
 ---
 
+<script>
+	//设置公共header区域内容
+	title.innerHTML = '{{ site.title }}'
+	title.className = 'btitle center'
+	description.innerHTML = '{{ site.description }}'
+	description.innerHTML = 'center'
+</script>
+
+
 {% for post in paginator.posts %}
     <div class="post-card">
 		{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
@@ -10,12 +19,14 @@ layout: default
 		{% else %}
 			{% assign hpurl =  post.hpurl %}
 		{% endunless %}	
-		<!-- ↓↓设置头图 -->
-		<div class="post-img"><img src="{{ hpurl }}"/></div>
-		<div class="post-card-content">
-		{{ post.title }} -> {{ post.date | date: "%Y.%m.%d" }} -> {{ post.categories }}
-		<span>{{ post.excerpt | strip_html }}</span>
-		</div>
+		<a href="{{ site.url }}{{ post.url }}">
+			<!-- ↓↓设置头图 -->
+			<div class="post-img"><img src="{{ hpurl }}"/></div>
+			<div class="post-card-content">
+				{{ post.title }} -> {{ post.date | date: "%Y.%m.%d" }}
+				<span>{{ post.excerpt | strip_html }}</span>
+			</div>
+		</a>
 	</div>
  {% endfor %}
 
