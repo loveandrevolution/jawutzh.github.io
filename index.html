@@ -5,9 +5,9 @@ layout: default
 <script>
 	//设置公共header区域内容
 	title.innerHTML = '{{ site.title }}'
-	title.className = 'btitle center'
+	title.className = 'btitle'
 	description.innerHTML = '{{ site.description }}'
-	description.className = 'center'
+	headCover.className = 'center'
 </script>
 
 
@@ -23,7 +23,7 @@ layout: default
 			<!-- ↓↓设置头图 -->
 			<div class="post-img"><img src="{{ hpurl }}"/></div>
 			<div class="post-card-content">
-				<h3>{{ post.title }}</h3>{{ post.date | date: "%Y.%m.%d" }}
+				<h3 class="post-title">{{ post.title }}</h3>{{ post.date | date: "%Y.%m.%d" }}
 				<span>{{ post.excerpt | strip_html }}</span>
 			</div>
 		</div>
