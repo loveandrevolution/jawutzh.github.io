@@ -45,6 +45,12 @@
 			.center{
 				text-align: center
 			}
+			.post-link{
+				color: #555;
+			}
+			.post-link:hover{
+				color: #777;
+			}
 			.post-card {
 				background: #FFF;
 				box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
@@ -52,13 +58,20 @@
 				height: 200px;
 				position: relative;
 			}
+			.post-card-content{
+				float: right;
+				padding: 20px;
+				width: calc(70% - 40px);
+			}
 			.post-img{
 				float: left;
+				width: 30%;
 			}
 			.post-img > img {
-				width: 200px;
+				width: 100%;
 				height: 200px;
 				border-radius: 8px 0px 0px 8px;
+				object-fill: cover
 			}
 			.post-content{
 				float: right;
