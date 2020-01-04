@@ -15,7 +15,7 @@ layout: default
 			<div class="post-img"><img src="{{ hpurl }}"/><div class="post-info">{{ post.date | date: "%Y.%m.%d" }}, {{ post.categories }} </div></div>
 			<div class="post-card-content">
 				<h3 class="post-title">{{ post.title }}</h3>
-				<span>{{ post.excerpt | strip_html }}</span>
+				<p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
 			</div>
 		</div>
 	</a>
