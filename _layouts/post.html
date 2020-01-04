@@ -3,3 +3,18 @@ layout: default
 ---
 
 {{ page.content }}
+
+<div class="post-card">
+	{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
+	{% unless page.hpurl %} 
+		{% assign hpurl = site.defaulthpurl %}
+	{% else %}
+		{% assign hpurl =  page.hpurl %}
+	{% endunless %}	
+	<!-- ↓↓设置头图 -->
+	<div class="post-img"><img src="{{ hpurl }}"/><div class="post-info">{{ page.date | date: "%Y.%m.%d" }}, {{ page.categories }} </div></div>
+	<div class="post-card-content">
+		<h3 class="post-title">{{ page.title }}</h3>
+		<div>{{ page.content }}</div>
+	</div>
+</div>
