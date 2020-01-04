@@ -21,9 +21,9 @@ layout: default
 				{% assign hpurl =  post.hpurl %}
 			{% endunless %}	
 			<!-- ↓↓设置头图 -->
-			<div class="post-img"><img src="{{ hpurl }}"/></div>
+			<div class="post-img"><img src="{{ hpurl }}"/><h3 class="post-title">{{ post.title }}</h3></div>
 			<div class="post-card-content">
-				<h3 class="post-title">{{ post.title }}</h3>{{ post.date | date: "%Y.%m.%d" }}
+				{{ post.date | date: "%Y.%m.%d" }}
 				<span>{{ post.excerpt | strip_html }}</span>
 			</div>
 		</div>
