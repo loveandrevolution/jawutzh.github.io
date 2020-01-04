@@ -2,15 +2,6 @@
 layout: default
 ---
 
-<script>
-	//设置公共header区域内容
-	title.innerHTML = '{{ site.title }}'
-	title.className = 'btitle'
-	description.innerHTML = '{{ site.description }}'
-	headCover.className = 'center'
-</script>
-
-
 {% for post in paginator.posts %}
 	<a href="{{ site.url }}{{ post.url }}" class="post-link">
 		<div class="post-card">
@@ -21,9 +12,9 @@ layout: default
 				{% assign hpurl =  post.hpurl %}
 			{% endunless %}	
 			<!-- ↓↓设置头图 -->
-			<div class="post-img"><img src="{{ hpurl }}"/><h3 class="post-title">{{ post.title }}</h3></div>
+			<div class="post-img"><img src="{{ hpurl }}"/><div class="post-info">{{ post.date | date: "%Y.%m.%d" }}, {{ post.categories }} </div></div>
 			<div class="post-card-content">
-				{{ post.date | date: "%Y.%m.%d" }}
+				<h3 class="post-title">{{ post.title }}</h3>
 				<span>{{ post.excerpt | strip_html }}</span>
 			</div>
 		</div>
