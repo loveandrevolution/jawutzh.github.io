@@ -28,14 +28,18 @@
 				width: 900px;
 				float: left;
 			}
-			#side-barSS{
+			.side-barSS{
 				width: 180px;
 				float: right;
 				background: #FFF;
 				box-shadow: 0px 0px 20px rgba(0,0,0,0.18);
 				border-radius: 8px;
 				padding: 20px;
-				height: 400px;
+			}
+			.avatar{
+				max-width: 100%;
+				border-radius: 50%;
+				box-shadow: 0px 2px 10px rgba(255,255,255, 0.25);
 			}
 			.container{
 				max-width: 1160px;
@@ -122,7 +126,7 @@
 				#main-area{ 
 					width: 100%
 				}
-				#side-barSS{
+				.side-barSS{
 					display: none
 				}
 			}
@@ -160,7 +164,9 @@
 			<div id="main-area">
 			{{ content }}
 			</div>
-			<div id="side-barSS">123123
+			<div class="side-barSS">
+				<img class="avatar" src="https://avatars3.githubusercontent.com/u/47635215">
+				文章{{ site.post | size}} 分类{{ site.categories | size }}
 			</div>
 		</div>
 		<footer>
