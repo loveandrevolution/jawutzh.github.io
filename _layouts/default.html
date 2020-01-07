@@ -67,6 +67,9 @@
 			.center{
 				text-align: center
 			}
+			.godark{
+				filter: brightness(0.85);
+			}
 			.post-link{
 				color: #555;
 			}
@@ -114,11 +117,13 @@
 			.page-title{
 				text-align: center;
 				font-weight: normal;
-				margin: 15px 0;
 				font-size: 28px;
 				line-height: 1em;
-				border-bottom: 1px solid #eee;
-				padding-bottom: 0.7em;
+				position: absolute;
+				bottom: 0;
+				left: 40px;
+				color: #FFF;
+				text-shadow: 0px 3px 10px rgba(0,0,0,0.1);
 			}
 			.post-img{
 				position: relative
@@ -149,8 +154,8 @@
 					padding: 15px;
 				}
 				.page-title{
-					margin-top: 10px;
 					font-size: 23px;
+					left: 15px;
 				}
 			}
 		</style>
