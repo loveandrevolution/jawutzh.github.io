@@ -19,7 +19,7 @@
 				box-shadow:0px 0px 10px rgba(0,0,0,0.1)
 			}
 			#title-block{
-				background: #67AEEC;
+				background: #CCC;
 				background-image: url("{{ site.url }}/pics/head.png");
 			}
 			#page{
@@ -39,8 +39,9 @@
 				max-width: 100%;
 				height: 180px;
 				border-radius: 50%;
-				box-shadow: 0px 2px 10px rgba(0,0,0, 0.25);
-				margin-bottom: 20px
+				box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+				margin-bottom: 20px;
+				background: #CCC;
 			}
 			.container{
 				max-width: 1160px;
@@ -51,7 +52,7 @@
 				padding: 100px 0
 			}
 			#site-title a{
-				background:#FFF;
+				color: #FFF;
 			}
 			.btitle{
 				font-size: 40px;
@@ -121,7 +122,8 @@
 				width: 100%;
 				height: 500px;
 				border-radius: 8px 8px 0px 0px;
-				object-fit: cover
+				object-fit: cover;
+				background: #CCC;
 			}
 			@media screen and (max-width:1200px) {
 				.container{
@@ -170,7 +172,7 @@
 			</div>
 			<div class="side-barSS center">
 				<img class="avatar" src="https://avatars3.githubusercontent.com/u/47635215"/>
-				<a href="{{ site.url }}">{{ site.title }}</a>
+				<a href="{{ site.url }}">@{{ site.author }}</a>
 			</div>
 		</div>
 		<footer>
