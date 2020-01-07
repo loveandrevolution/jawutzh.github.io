@@ -154,7 +154,7 @@
 			<div id="title-block">
 				<div class="container">
 					<div id="headCover" class="center">
-						<h1 id="site-title" class="btitle">{{ site.title }}</h1>
+						<h1 id="site-title" class="btitle"><a href="{{ site.url }}">{{ site.title }}</a></h1>
 						<span id="description" class="bdescription">{{ site.description }}</span>
 					</div>
 				</div>
@@ -164,9 +164,9 @@
 			<div id="main-area">
 			{{ content }}
 			</div>
-			<div class="side-barSS">
+			<div class="side-barSS center">
 				<img class="avatar" src="https://avatars3.githubusercontent.com/u/47635215"/>
-					
+				<a href="{{ site.url }}">{{ site.title }}</a>
 			</div>
 		</div>
 		<footer>
