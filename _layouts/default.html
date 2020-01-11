@@ -102,6 +102,14 @@
 				background: #FFF;
 				box-shadow: 0px 0px 20px rgba(0,0,0,0.18);
 			}
+			.card-title{
+				margin: 10px;
+			}
+			.card-links{
+				padding: 5px 10px;
+				border-top:2px solid #EEE;
+				
+			}
 			.post-title{
 				font-size: 20px;
 				font-weight: bold;
@@ -186,10 +194,16 @@
 				<a href="{{ site.url }}">@{{ site.author }}</a>
 			</div>
 			<div class="side-barSS card">
-				<a>链接</a>
+				<span class="card-title">分类</span>
+				<div class="card-links">
+					<a href="">日记</a>
+				</div>
 			</div>
 			<div class="side-barSS card">
-				<a>链接</a>
+				<span class="card-title">链接</span>
+				<div class="card-links">
+					<a href="">日记</a>
+				</div>
 			</div>
 		</div>
 		<footer>
