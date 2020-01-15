@@ -11,7 +11,7 @@
         repo: 'newsite',
         owner: 'Jawutzh',
         admin: ['Jawutzh'],
-        id: md5(window.location.pathname),
+        id: md5({{ page.url }}),
         pagerDirection: 'first',
         createIssueManually: true
     });
