@@ -11,8 +11,9 @@
         repo: 'newsite',
         owner: 'Jawutzh',
         admin: ['Jawutzh'],
-        id: 'AABB',
-        pagerDirection: 'first'
+        id: md5({{ page.url }}),
+        pagerDirection: 'first',
+        createIssueManually: true
     });
     gitalk.render('gitalk-container');
 </script> 
