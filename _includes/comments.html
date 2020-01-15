@@ -1,0 +1,45 @@
+<link href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css" rel="stylesheet"/>
+<script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+
+<div id="gitalk-container"></div>     
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+    // gitalk的主要参数
+        clientID: 'b1ecbdff2ea66b670a30',
+        clientSecret: '93f29441f289a5d03be678f426365b63f66bbd15',
+        repo: 'jawutzh.github.io/newsite',
+        owner: 'Jawutzh',
+        admin: ['Jawutzh'],
+        id: md5(window.location.pathname),
+        pagerDirection: 'first',
+        createIssueManually: true
+    });
+    gitalk.render('gitalk-container');
+</script> 
+
+<style>
+.gt-container * {
+    border: none;
+}
+.gt-container .gt-popup .gt-action.is--active:before {
+    display: none;
+}
+.gt-header-preview {
+    min-height: 72px;
+    background: #FFF;
+}
+.gt-container .gt-ico-text {
+    line-height: 14px;
+    vertical-align: middle;
+}
+.markdown-body img {
+    margin: 16px 0px;
+}
+.gt-container .gt-header-controls .gt-btn {
+    transition: 0.1s;
+}
+.markdown-body strong {
+    font-weight: 600 !important;
+}
+</style>
