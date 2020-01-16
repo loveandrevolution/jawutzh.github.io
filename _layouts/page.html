@@ -3,14 +3,9 @@ layout: default
 ---
 
 <div class="page-card">
-    <div class="page-meta"><span class="page-title">{{ page.title }}</span><span class="page-date"><span><i class="fa fa-clock-o"></i> {{ page.date | date: "%Y.%m.%d" }}</span>
-		{% for category in page.categories %}
-            <a href="{{ site.url }}/category/{{ category }}"><i class="fa fa-archive"></i> {{ category }}</a>
-        {% endfor %}
-		</span>
-    </div>    
+    <div class="page-meta"><span class="page-title">{{ page.title }}</span></div>
     <div class="page-content" id="pageContent">
-		{% if page.encrypted %}
+        {% if page.encrypted %}
 			<div class="post-encrypted">
 			<i class="fa fa-lock"></i>
 			此文已加密，請输入密钥以解密。
@@ -23,8 +18,9 @@ layout: default
 			</div>
 
 			<script>
-			var encrypt = "{{ page.content | strip_html | strip_newlines }}"
-
+			var encrypt = "{{ content | strip_html | strip_newlines }}"
+			</script>
+			<script>
 			function decryptPost(){
 				var key = psdta.value
 				if(!key){
@@ -52,21 +48,11 @@ layout: default
 			})
 			</script>
 		{% else %}	
-			{{ page.content }}
+			{{ content }}
 		{% endif %}
-		
     </div>
-	<div class="post-changer">
-	{% if page.previous != nil %}
-	<a href="{{ page.previous.url }}" class="previous">←上一篇</a>
-	{% endif %}
-		
-	{% if page.next != nil %}
-	<a href="{{ page.next.url }}" class="next">下一篇→</a>
-	{% endif %}
-		
-
-	</div>
-	{% include comments.html %}
-
 </div>
+
+{% if page.gitalk %}
+	{% include comments.html %}
+{% endif %}
