@@ -23,6 +23,11 @@
 				transition: 0.2s;
 				color: #FB7299;
 			}
+			#header-menu-fa{
+				height:60px;
+				width: 100%;
+				overflow:hidden;
+			}
 			#header-menu{
 				height:60px;
 				line-height: 60px;
@@ -180,10 +185,12 @@
 	</head>
 	<body>
 		<header>
-			<div id="header-menu"></div>
-			<div id="header-menu-moji">
-				<div class="container">
-					<a href="{{ site.url }}">{{ site.title }}</a>
+			<div id="header-menu-fa">
+				<div id="header-menu"></div>
+				<div id="header-menu-moji">
+					<div class="container">
+						<a href="{{ site.url }}">{{ site.title }}</a>
+					</div>
 				</div>
 			</div>
 			<div id="title-block"></div>
