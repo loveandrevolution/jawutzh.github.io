@@ -25,12 +25,23 @@
 			}
 			#header-menu{
 				height:60px;
-				box-shadow:0px 0px 10px rgba(0,0,0,0.1)
+				line-height: 60px;
+				position: absolute;
+				width: 100%
+				background-color: rgba(255,255,255,0.7);
+				filter: blur(2px);
+			}
+			#header-menu-moji{
+				position: absolute;
+				height:60px;
+				width: 100%
 			}
 			#title-block{
 				background: #EEE;
 				background: url(https://jawutzh.github.io/newsite/pics/head.png) center center no-repeat;
 				background-size: cover;
+				box-shadow: 0px 0px 10px rgba(0,0,0,0.3) inset;
+				height:350px
 			}
 			#page{
 				margin-top: 40px
@@ -58,24 +69,6 @@
 				max-width: 1160px;
 				padding: 0 20px;
 				margin: auto
-			}
-			#headCover{
-				padding: 130px 0
-			}
-			#site-title{
-				font-weight: normal
-			}
-			#site-title a{
-				color: #FFF;
-			}
-			.btitle{
-				font-size: 40px;
-				color: #FFF;
-				text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-			}
-			.bdescription{
-				color: #FFF;
-				text-shadow: 0px 0px 7px rgba(0,0,0,0.5);
 			}
 			.center{
 				text-align: center
@@ -169,8 +162,8 @@
 				}
 			}
 			@media screen and (max-width:700px) {
-				#headCover{
-					padding: 70px 0
+				#title-block{
+					height: 250px;
 				}
 				.post-img > img {
 					height: 250px;
@@ -187,19 +180,13 @@
 	</head>
 	<body>
 		<header>
-			<div id="header-menu">
+			<div id="header-menu"></div>
+			<div id="header-menu-moji">
 				<div class="container">
 					<a href="{{ site.url }}">{{ site.title }}</a>
 				</div>
 			</div>
-			<div id="title-block">
-				<div class="container">
-					<div id="headCover" class="center">
-						<h1 id="site-title" class="btitle"><a href="{{ site.url }}">{{ site.title }}</a></h1>
-						<span id="description" class="bdescription">{{ site.description }}</span>
-					</div>
-				</div>
-			</div>
+			<div id="title-block"></div>
 		</header>
 		<div id="page" class="container">
 			<div id="main-area">
