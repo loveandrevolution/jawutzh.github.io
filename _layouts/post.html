@@ -10,7 +10,7 @@ layout: default
 		{% assign hpurl =  page.hpurl %}
 	{% endunless %}	
 	<!-- ↓↓设置头图 -->
-	<div class="post-img"><img class="godark"src="{{ hpurl }}"/><div class="post-info">{{ page.date | date: "%Y.%m.%d" }}, {{ page.categories }} </div><h3 class="page-title">{{ page.title }}</h3></div>
+	<div class="post-img"><img class="godark" src="{{ hpurl }}" draggable="false"/><div class="post-info">{{ page.date | date: "%Y.%m.%d" }}, {{ page.categories }} </div><h3 class="page-title">{{ page.title }}</h3></div>
 	<div class="post-card-content">
 		<div>{{ page.content }}</div>
 		{% include comments.html %}
