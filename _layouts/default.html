@@ -12,8 +12,8 @@
 		<title>{% if page.title != nil %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 		
 		<script>
-			if(window.location.href != '{{ site.url }}/{{ page.url }}')
-				window.location.href = '{{ site.url }}/{{ page.url }}'
+			if(window.location.href != '{{ site.url }}{{ page.url }}')
+				window.location.href = '{{ site.url }}{{ page.url }}'
 		</script>
 		
 		<style>
