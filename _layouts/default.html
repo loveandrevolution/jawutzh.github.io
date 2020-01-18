@@ -9,8 +9,13 @@
 		<link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
 		
-		 <title>{% if page.title != nil %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-		 
+		<title>{% if page.title != nil %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+		
+		<script>
+			if(window.location.href != '{{ site.url }}/{{ page.url }}')
+				window.location.href = '{{ site.url }}/{{ page.url }}'
+		</script>
+		
 		<style>
 			body{
 				margin: 0;
