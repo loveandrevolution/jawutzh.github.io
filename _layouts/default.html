@@ -119,18 +119,22 @@
 			}
 			.post-card {
 				background: #FFF;
-				box-shadow: 0px 0px 20px rgba(0,0,0,0.18);
+				box-shadow: 0px 0px 8px rgba(0,0,0,0.18);
 				border-radius: 8px;
 				position: relative;
 				text-decoration: none;
-				margin-bottom:40px;
+				margin-bottom: 40px;
+				transition: .2s
 			}
 			.post-card-content{
 				padding: 20 40px;
 			}
+			.post-card {
+				box-shadow: 0px 0px 20px rgba(0,0,0,0.18);
+			}
 			.card{
 				background: #FFF;
-				box-shadow: 0px 0px 20px rgba(0,0,0,0.18);
+				box-shadow: 0px 0px 8px rgba(0,0,0,0.18);
 			}
 			.card-title{
 				display: block;
@@ -144,6 +148,16 @@
 			}
 			.card-links a{ 
 				color: #888
+			}
+			.counter{
+				display: inline-block;
+				padding: 2px 5px;
+				font-size: 12px;
+				font-weight: 600;
+				line-height: 1;
+				color: #586069;
+				background: rgba(27,31,35,.08);
+				border-radius: 20px;
 			}
 			.post-title{
 				font-size: 20px;
@@ -318,7 +332,7 @@
 				<span class="card-title"><i class="fa fa-file-archive-o"></i> 分类</span>
 				<div class="card-links">
 					{% for category in site.categories %}
-						<div><a href="{{ site.url }}/category/{{ category | first }}"><i class="fa fa-folder orange"></i> {{ category | first }}</a> <span class="category-number">({{ category | last | size }})</span></div>
+						<div><a href="{{ site.url }}/category/{{ category | first }}"><i class="fa fa-folder orange"></i> {{ category | first }}</a> <span class="counter">({{ category | last | size }})</span></div>
 					{% endfor %}
 				</div>
 			</div>
