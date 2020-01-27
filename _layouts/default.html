@@ -318,7 +318,7 @@
 				<span class="card-title"><i class="fa fa-file-archive-o"></i> 分类</span>
 				<div class="card-links">
 					{% for category in site.categories %}
-						<div><a href="{{ site.url }}/category/{{ category | first }}"><i class="fa fa-folder orange"></i> {{ category | first }}</a> <span class="category-number">{{ category | last | size }})</span></div>
+						<div><a href="{{ site.url }}/category/{{ category | first }}"><i class="fa fa-folder orange"></i> {{ category | first }}</a> <span class="category-number">({{ category | last | size }})</span></div>
 					{% endfor %}
 				</div>
 			</div>
