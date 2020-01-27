@@ -142,6 +142,7 @@
 			.card-links{
 				border-top: 1px dotted #EEE;
 			}
+			.card-links a{ color: #333}
 			.post-title{
 				font-size: 20px;
 				font-weight: bold;
@@ -175,6 +176,9 @@
 				border-radius: 8px 8px 0px 0px;
 				object-fit: cover;
 				background: #EEE;
+			}
+			.orange{
+				color: orange
 			}
 			@media screen and (max-width:1200px) {
 				#headCover{
@@ -312,7 +316,7 @@
 				<span class="card-title"><i class="fa fa-file-archive-o"></i> 分类</span>
 				<div class="card-links">
 					{% for category in site.categories %}
-						<a href="{{ site.url }}/category/{{ category | first }}">{{ category | first }}{{ category | last | size }}</a>
+						<a href="{{ site.url }}/category/{{ category | first }}"><i class="fa fa-folder orange">{{ category | first }}({{ category | last | size }})</a><br/>
 					{% endfor %}
 				</div>
 			</div>
