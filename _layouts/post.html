@@ -15,4 +15,33 @@ layout: default
 		<div>{{ page.content }}</div>
 		{% include comments.html %}
 	</div>
+	<div class="post-changer">
+		{% if page.previous != nil %}
+		<a href="{{ page.previous.url }}" class="previous">
+			{% unless page.previous.hpurl %} 
+				{% assign hpurl = site.defaulthpurl %}
+			{% else %}
+				{% assign hpurl = page.previous.hpurl %}
+			{% endunless %}
+			<img src="hpurl" class="godark"/>
+			<div class="post-head">
+			{{ page.previous.title }}
+			</div>
+		</a>
+		{% endif %}
+			
+		{% if page.next != nil %}
+		<a href="{{ page.next.url }}" class="next">
+			{% unless page.next.hpurl %} 
+				{% assign hpurl = site.defaulthpurl %}
+			{% else %}
+				{% assign hpurl = page.next.hpurl %}
+			{% endunless %}
+			<img src="hpurl" class="godark"/>
+			<div class="post-head">
+			{{ page.next.title }}
+			</div>
+		</a>
+		{% endif %}
+	</div>
 </div>
