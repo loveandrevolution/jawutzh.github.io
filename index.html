@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% for post in paginator.posts %}
-	{% if post.categories != nil %}
+	{% if post.categories != ' '%}
 		<a href="{{ site.url }}{{ post.url }}" class="post-link">
 			<div class="post-card">
 				{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
