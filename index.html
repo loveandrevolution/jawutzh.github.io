@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% for post in paginator.posts %}
-	{% unless post.categories %}
+	{% if post.categories != nil %}
 		<a href="{{ site.url }}{{ post.url }}" class="post-link">
 			<div class="post-card">
 				{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
@@ -23,11 +23,11 @@ layout: default
 	{% else %}
 		<div class="post-card">
 			<div class="post-card-content">
-				<img width="50" height="50" class="avatar" src="https://avatars3.githubusercontent.com/u/47635215"/>
+				<img width="50" height="50" src="https://avatars3.githubusercontent.com/u/47635215"/>
 				{{ post.date | date: "%Y.%m.%d" }}
 				<p class="post-excerpt">{{ post.content }}</p>
 			</div>
 		</div>
-	{% endunless %}
+	{% endif %}
  {% endfor %}
 
