@@ -3,21 +3,31 @@ layout: default
 ---
 
 {% for post in paginator.posts %}
-	<a href="{{ site.url }}{{ post.url }}" class="post-link">
+	{% if post.categories %}
+		<a href="{{ site.url }}{{ post.url }}" class="post-link">
+			<div class="post-card">
+				{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
+				{% unless post.hpurl %} 
+					{% assign hpurl = site.defaulthpurl %}
+				{% else %}
+					{% assign hpurl =  post.hpurl %}
+				{% endunless %}	
+				<!-- ↓↓设置头图 -->
+				<div class="post-img"><img src="{{ hpurl }}" draggable="false"/><div class="post-info">{{ post.date | date: "%Y.%m.%d" }}, {{ post.categories }} </div></div>
+				<div class="post-card-content">
+					<h3 class="post-title">{{ post.title }}</h3>
+					<p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
+				</div>
+			</div>
+		</a>
+	{% else %}
 		<div class="post-card">
-			{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
-			{% unless post.hpurl %} 
-				{% assign hpurl = site.defaulthpurl %}
-			{% else %}
-				{% assign hpurl =  post.hpurl %}
-			{% endunless %}	
-			<!-- ↓↓设置头图 -->
-			<div class="post-img"><img src="{{ hpurl }}" draggable="false"/><div class="post-info">{{ post.date | date: "%Y.%m.%d" }}, {{ post.categories }} </div></div>
 			<div class="post-card-content">
-				<h3 class="post-title">{{ post.title }}</h3>
-				<p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
+				<img width="50" height="50" class="avatar" src="https://avatars3.githubusercontent.com/u/47635215"/>
+				{{ post.date | date: "%Y.%m.%d" }}
+				<p class="post-excerpt">{{ post.content }}</p>
 			</div>
 		</div>
-	</a>
+	{% endif %}
  {% endfor %}
 
