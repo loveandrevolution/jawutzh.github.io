@@ -22,10 +22,15 @@ layout: default
 		</a>
 	{% else %}
 		<div class="post-card">
-			<div class="post-card-content">
+			<div class="post-card-content-2">
 				<img class="avatar-small" src="https://avatars3.githubusercontent.com/u/47635215"/>
-				{{ post.date | date: "%Y.%m.%d" }}
-				<p class="post-excerpt">{{ post.content }}</p>
+				<div class="ss-head">
+					<span>{{ site.author }}</span>
+					<span class="ss-time">{{ post.date | date: "%Y年%m月%d日" }}</span>
+				</div>
+				<div class="ss-content">
+					{{ post.content }}
+				</div>
 			</div>
 		</div>
 	{% endif %}
