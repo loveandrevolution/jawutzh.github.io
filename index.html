@@ -27,9 +27,12 @@ layout: default
 				<div class="ss-head">
 					<span>{{ site.author }}</span>
 					<span class="ss-time">{{ post.date | date: "%Y年%M月%D日" }}</span>
-				<p class="post-excerpt">{{ post.content }}</p>
+				</div>
+				<div class="ss-content">
+					{{ post.content }}
+				</div>
 			</div>
-		</div>
+		</div></div>
 	{% endif %}
  {% endfor %}
 
