@@ -26,13 +26,13 @@ layout: default
 				<img class="avatar-small" src="https://avatars3.githubusercontent.com/u/47635215"/>
 				<div class="ss-right">
 					<div class="ss-head">
-						<span>{{ site.author }}</span>
-						<span class="ss-author">{{ site.author }}</span>
+						<span>{{ site.title }}</span>
+						<span class="ss-author">@{{ site.author }}</span>
 					</div>
 					<div class="ss-content">
 						{{ post.content }}
 					</div>
-					<span class="ss-author">{{ post.date | date: "%Y年%-m月%-d日"  }}</span>
+					<span class="ss-author"><i class="fa fa-calendar"></i> {{ post.date | date: "%Y年%-m月%-d日"  }}</span>
 				</div>
 			</div>
 		</div>
