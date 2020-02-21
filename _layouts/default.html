@@ -47,14 +47,15 @@
 				margin-right: 1.2em;
 			}
 			.site-s{
-				padding: 400px 0;
+				padding: 20px 0;
 				background: #333;
 				
 			}
 			.site-s a{
 				color: #FFF;
 				font-size: 30px;
-				line-height: 40px
+				line-height: 40px;
+				display: block;
 			}
 			.site-s span{
 				color:#FFF;
@@ -408,13 +409,13 @@
 	</head>
 	<body>
 		<header>
-			<div id="header-menu">
-				<div class="site-s">
-					<div class="container">
-						<a href="{{ site.url }}">{{ site.title }}</a>
-						<span>{{ site.description }}</span>
-					</div>
+			<div class="site-s">
+				<div class="container">
+					<a href="{{ site.url }}">{{ site.title }}</a>
+					<span>{{ site.description }}</span>
 				</div>
+			</div>
+			<div id="header-menu">
 				<div class="container">
 					<a href="{{ site.url }}"><i class="fa fa-home"></i> 首页</a>
 					<a href="{{ site.url }}"><i class="fa fa-home"></i> 关于</a>
