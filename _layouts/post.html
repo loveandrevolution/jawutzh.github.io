@@ -17,9 +17,9 @@ layout: default
 		</div>
 	</div>
 {% else %}
-<div class="post-card-2">
-	<div class="post-card-content-2">
-		<img class="avatar-small" src="https://avatars3.githubusercontent.com/u/47635215"/>
+	<div class="post-card-2">
+		<div class="post-card-content-2">
+			<img class="avatar-small" src="https://avatars3.githubusercontent.com/u/47635215"/>
 			<div class="ss-right">
 				<div class="ss-head">
 					<span>{{ site.nickname }}</span>
@@ -32,4 +32,5 @@ layout: default
 			</div>
 		</div>
 	</div>
+	{% include comments.html %}
 {% endif %}
