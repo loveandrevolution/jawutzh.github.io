@@ -84,11 +84,9 @@
 				width: 730px;
 				float: right;
 			}
-			.side-barSS{
+			.side-bar{
 				padding: 15px;
 				float: left;
-				border-radius: 8px;
-				margin-bottom: 20px;
 				width: 220px;
 			}
 			.avatar{
@@ -198,6 +196,8 @@
 			.card{
 				background: #FFF;
 				box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.07);
+				border-radius: 8px;
+				margin-bottom: 20px;
 			}
 			.card-title{
 				display: block;
@@ -408,27 +408,29 @@
 			</div>
 		</header>
 		<div id="page" class="container">
-			<div class="side-barSS card">
-				<div class="master-back"></div>
+			<div class="side-bar">
+				<div class="card">
+					<div class="master-back"></div>
 					<a href="{{ site.url }}"><img class="avatar" src="https://avatars3.githubusercontent.com/u/47635215"/></a>
 					<a href="{{ site.url }}">@{{ site.author }}</a>
-			</div>
-			<div class="side-barSS card">
-				<span class="card-title"><i class="fa fa-archive"></i> 分类</span>
-				<div class="card-links">
-					{% for category in site.categories %}
-						<div><a href="{{ site.url }}/category/{{ category | first }}"><i class="fa fa-folder orange"></i> {{ category | first }}</a> <span class="counter">{{ category | last | size }}</span></div>
-					{% endfor %}
 				</div>
-			</div>
-			<div class="side-barSS card">
-				<span class="card-title"><i class="fa fa-link"></i> 链接</span>
-				<div class="card-links">
-					<a href="">日记</a>
+				<div class="card">
+					<span class="card-title"><i class="fa fa-archive"></i> 分类</span>
+					<div class="card-links">
+						{% for category in site.categories %}
+							<div><a href="{{ site.url }}/category/{{ category | first }}"><i class="fa fa-folder orange"></i> {{ category | first }}</a> <span class="counter">{{ category | last | size }}</span></div>
+						{% endfor %}
+					</div>
 				</div>
-			</div>
-			<div id="main-area">
-			{{ content }}
+				<div class="card">
+					<span class="card-title"><i class="fa fa-link"></i> 链接</span>
+					<div class="card-links">
+						<a href="">日记</a>
+					</div>
+				</div>
+				<div id="main-area">
+				{{ content }}
+				</div>
 			</div>
 		</div>
 		<footer>
