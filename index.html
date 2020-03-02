@@ -3,41 +3,21 @@ layout: default
 ---
 
 {% for post in paginator.posts %}
-	{% if post.category %}
-		<a href="{{ site.url }}{{ post.url }}" class="post-link">
-			<div class="post-card">
-				{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
-				{% unless post.hpurl %} 
-					{% assign hpurl = site.defaulthpurl %}
-				{% else %}
-					{% assign hpurl =  post.hpurl %}
-				{% endunless %}	
-				<!-- ↓↓设置头图 -->
-				<div class="post-img"><img src="{{ hpurl }}" draggable="false"/><div class="post-info">{{ post.date | date: "%Y.%m.%d" }}, {{ post.categories }}</div></div>
-				<div class="post-card-content">
-					<h3 class="post-title">{{ post.title }}</h3>
-					<p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
-				</div>
+	<a href="{{ site.url }}{{ post.url }}" class="post-link">
+		<div class="post-card">
+			{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
+			{% unless post.hpurl %} 
+				{% assign hpurl = site.defaulthpurl %}
+			{% else %}
+				{% assign hpurl =  post.hpurl %}
+			{% endunless %}	
+			<!-- ↓↓设置头图 -->
+			<div class="post-img"><img src="{{ hpurl }}" draggable="false"/><div class="post-info">{{ post.date | date: "%Y.%m.%d" }}, {{ post.categories }}</div></div>
+			<div class="post-card-content">
+				<h3 class="post-title">{{ post.title }}</h3>
+				<p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
 			</div>
-		</a>
-	{% else %}
-		<a href="{{ site.url }}{{ post.url }}">
-			<div class="post-card-2">
-				<div class="post-card-content-2">
-					<img class="avatar-small" src="https://avatars3.githubusercontent.com/u/47635215"/>
-					<div class="ss-right">
-						<div class="ss-head">
-							<span>{{ site.nickname }}</span>
-							<span class="ss-author">@{{ site.author }}</span>
-						</div>
-						<div class="ss-content">
-							{{ post.content }}
-						</div>
-						<span class="ss-author">發表於 {{ post.date | date: "%Y年%-m月%-d日"  }}</span>
-					</div>
-				</div>
-			</div>
-		</a>
-	{% endif %}
+		</div>
+	</a>
  {% endfor %}
 

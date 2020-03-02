@@ -1,36 +1,17 @@
 ---
 layout: default
 ---
-{% if page.category %}
-	<div class="post-card">
-		{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
-		{% unless page.hpurl %} 
-			{% assign hpurl = site.defaulthpurl %}
-		{% else %}
-			{% assign hpurl =  page.hpurl %}
-		{% endunless %}	
-		<!-- ↓↓设置头图 -->
-		<div class="post-img"><img class="godark" src="{{ hpurl }}" draggable="false"/><div class="post-info">{{ page.date | date: "%Y.%m.%d" }}, {{ page.categories }} </div><h3 class="page-title">{{ page.title }}</h3></div>
-		<div class="post-card-content">
-			<div>{{ page.content }}</div>
-			{% include comments.html %}
-		</div>
+<div class="post-card">
+	{% comment %}判断文章有无头图，若无使用默认{% endcomment %}
+	{% unless page.hpurl %} 
+		{% assign hpurl = site.defaulthpurl %}
+	{% else %}
+		{% assign hpurl =  page.hpurl %}
+	{% endunless %}	
+	<!-- ↓↓设置头图 -->
+	<div class="post-img"><img class="godark" src="{{ hpurl }}" draggable="false"/><div class="post-info">{{ page.date | date: "%Y.%m.%d" }}, {{ page.categories }} </div><h3 class="page-title">{{ page.title }}</h3></div>
+	<div class="post-card-content">
+		<div>{{ page.content }}</div>
+		{% include comments.html %}
 	</div>
-{% else %}
-	<div class="post-card-2">
-		<div class="post-card-content-2">
-			<img class="avatar-small" src="https://avatars3.githubusercontent.com/u/47635215"/>
-			<div class="ss-right">
-				<div class="ss-head">
-					<span>{{ site.nickname }}</span>
-				<span class="ss-author">@{{ site.author }}</span>
-					</div>
-				<div class="ss-content">
-					{{ page.content }}
-				</div>
-				<span class="ss-author">發表於 {{ page.date | date: "%Y年%-m月%-d日"  }}</span>
-			</div>
-		</div>
-	</div>
-	{% include comments.html %}
-{% endif %}
+</div>
