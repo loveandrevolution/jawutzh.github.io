@@ -68,6 +68,7 @@
 				background-color: #EEE !important;
 				background: url(https://jawutzh.github.io/newsite/pics/head.png) center center no-repeat;
 				background-size: cover;
+				height: 40px
 			}
 			.site-title {
 			    font-size: 22px;
@@ -142,26 +143,6 @@
 				max-width: 1000px;
 				padding: 0 20px;
 				margin: auto
-			}
-			#headCover{
-				padding: 130px 0 190px 0
-			}
-
-			#site-title{
-				font-weight: normal;
-				margin: 0 0 20px 0;
-			}
-			#site-title a{
-				color: #FFF;
-			}
-			.btitle{
-				font-size: 40px;
-				color: #FFF;
-				text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
-			}
-			.bdescription{
-				color: #FFF;
-				text-shadow: 0px 0px 7px rgba(0,0,0,0.5);
 			}
 			.center{
 				text-align: center
@@ -305,9 +286,6 @@
 				.ss-head span{
 					font-size: 15px
 				}
-				#headCover{
-					text-align: center
-				}
 				.container{
 					padding: 0px;
 				}
@@ -330,17 +308,6 @@
 				}
 			}
 			@media screen and (max-width:700px) {
-
-				#headCover{
-					padding: 80px 0 140px 0;
-				}
-				#site-title {
-					margin: 0 0 15px 0;
-					font-size: 2em;
-				}
-				.bdescription {
-					font-size: 0.9em;
-				}
 				.post-img > img {
 					height: 250px;
 				}
@@ -435,14 +402,6 @@
 					<a href="{{ site.url }}" class="site-title">{{ site.title }}</a>
 					<a href="{{ site.url }}" class="menu-opi">关于</a>
 					<a href="{{ site.url }}"  class="menu-opi">分类</a>
-				</div>
-			</div>
-			<div id="title-block">
-				<div class="container">
-					<div id="headCover">
-						<h1 id="site-title" class="btitle"><a href="{{ site.url }}">{{ site.title }}</a></h1>
-						<span id="description" class="bdescription">{{ site.description }}</span>
-					</div>
 				</div>
 			</div>
 		</header>
