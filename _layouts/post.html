@@ -12,7 +12,7 @@ layout: default
 	<div class="post-img"><img class="godark" src="{{ hpurl }}" draggable="false"/><h3 class="page-title">{{ page.title }}</h3></div>
 	<div class="post-card-content">
 		<img class="avatar" src="https://avatars3.githubusercontent.com/u/47635215"/>
-		<div class="post-author"><span>{{ site.author }}</span><span>{{ page.date | date: "%Y.%m.%d" }}</span></div>
+		<div class="post-author"><div>{{ site.author }}</div><div>发表于{{ page.date | date: "%Y年%m月%d日" }}</div></div>
 		<div>{{ page.content }}</div>
 		{% include comments.html %}
 	</div>
