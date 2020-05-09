@@ -13,7 +13,7 @@ layout: default
 	<div class="post-card-content">
 		<img class="avatar" src="https://avatars3.githubusercontent.com/u/47635215"/>
 		<
-		<div class="post-author">{{ site.author }}<br/>{{ page.date | date: "%Y.%m.%d" }}</div>
+		<div class="post-author"><span>{{ site.author }}</span><span>{{ page.date | date: "%Y.%m.%d" }}</span></div>
 		<div>{{ page.content }}</div>
 		{% include comments.html %}
 	</div>
