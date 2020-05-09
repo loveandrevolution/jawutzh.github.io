@@ -11,11 +11,9 @@ layout: default
 	<!-- ↓↓设置头图 -->
 	<div class="post-img"><img class="godark" src="{{ hpurl }}" draggable="false"/><h3 class="page-title">{{ page.title }}</h3></div>
 	<div class="post-card-content">
-		<div class="post-info">
-			<img class="avatar" src="https://avatars3.githubusercontent.com/u/47635215"/>
-			<div>{{ site.author }}</div>
-			<div>发表于 {{ page.date }}</div>
-		</div>
+		<img class="avatar" src="https://avatars3.githubusercontent.com/u/47635215"/>
+		<div>{{ site.author }}</div>
+		<div>发表于 {{ post.date | date: "%Y.%m.%d" }}</div>
 		<div>{{ page.content }}</div>
 		{% include comments.html %}
 	</div>
