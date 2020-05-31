@@ -6,4 +6,4 @@ permalink: /:title.html/
 url: https://jawutzh.github.io/
 paginate: 8
 paginate_path: "/page:num"
-defaulthpurl: https://jawutzh.github.io/newsite/pics/default.jpg
+defaulthpurl: https://jawutzh.github.io/pics/default.jpg
